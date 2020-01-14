@@ -7,6 +7,13 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        StartDeathSequence();
+    }
+
+    private void StartDeathSequence()
+    {
         SendMessage("OnCollisionTriggered");
+        var explosion = transform.Find("Explosion")?.gameObject;
+        explosion.SetActive(true);
     }
 }
