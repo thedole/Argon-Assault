@@ -1,24 +1,23 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour
+public class MovementController : MonoBehaviour
 {
-    [Tooltip("In m/s")]
-    [SerializeField]
-    float xSpeed = 15f;
+    [Header("General")]
 
     [Tooltip("In m/s")]
     [SerializeField]
-    float ySpeed = 15f;
+    float ControlSpeed = 15f;
+
+    [Header("Position based")]
 
     [Tooltip("In meters")]
     [SerializeField]
-    float xLocalPositionLimit = 3.5f;
+    float xLocalPositionLimit = 4f;
 
     [Tooltip("In meters")]
     [SerializeField]
-    float yLocalPositionLimit = 3f;
+    float yLocalPositionLimit = 3.5f;
 
     [Tooltip("In Euler degrees")]
     [SerializeField]
@@ -30,6 +29,12 @@ public class Player : MonoBehaviour
 
     [Tooltip("In Euler degrees")]
     [SerializeField]
+    float rollFromPositionFactor = 0.6f;
+
+    [Header("Control Throw based")]
+
+    [Tooltip("In Euler degrees")]
+    [SerializeField]
     float maxRollFromThrow = 20f;
 
 
@@ -37,19 +42,17 @@ public class Player : MonoBehaviour
     [SerializeField]
     float maxPitchFromThrow = 20f;
 
-    [Tooltip("In Euler degrees")]
-    [SerializeField]
-    float rollFromPositionFactor = 0.6f;
+    private bool controlsDeactivated;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
+        if (controlsDeactivated)
+        {
+            return;
+        }
+
         HandleInput();
     }
 
@@ -62,11 +65,11 @@ public class Player : MonoBehaviour
     private void Translate()
     {
         var xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
-        var xOffset = xThrow * xSpeed * Time.deltaTime;
+        var xOffset = xThrow * ControlSpeed * Time.deltaTime;
         var xLocal = transform.localPosition.x + xOffset;
 
         var yThrow = CrossPlatformInputManager.GetAxis("Vertical");
-        var yOffset = yThrow * ySpeed * Time.deltaTime;
+        var yOffset = yThrow * ControlSpeed * Time.deltaTime;
         var yLocal = transform.localPosition.y;
 
         transform.localPosition = new Vector3(
@@ -124,5 +127,10 @@ public class Player : MonoBehaviour
         var pitchFromThrow = yThrow * -maxPitchFromThrow;
 
         return new Vector3(pitchFromThrow, 0f, rollFromThrow);
+    }
+
+    public void CollisionTriggered()
+    {
+        controlsDeactivated = true;
     }
 }
