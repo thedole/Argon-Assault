@@ -896,20 +896,25 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.424
       objectReference: {fileID: 0}
+    - target: {fileID: 4134808360752620316, guid: 599c9ed48dbd0e246adbd5ea74651b9c,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d1ca68c5ba7ba8f439d5413694667e39, type: 3}
     - target: {fileID: 4134808360752620317, guid: 599c9ed48dbd0e246adbd5ea74651b9c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4134808360752620317, guid: 599c9ed48dbd0e246adbd5ea74651b9c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4134808360752620317, guid: 599c9ed48dbd0e246adbd5ea74651b9c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5861272385554263659, guid: 599c9ed48dbd0e246adbd5ea74651b9c,
         type: 3}
