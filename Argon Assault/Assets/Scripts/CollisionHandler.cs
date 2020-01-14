@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
@@ -15,5 +18,15 @@ public class CollisionHandler : MonoBehaviour
         SendMessage("OnCollisionTriggered");
         var explosion = transform.Find("Explosion")?.gameObject;
         explosion.SetActive(true);
+
+        StartCoroutine(RestartLevel());
+    }
+
+    private IEnumerator RestartLevel()
+    {
+        var activeSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        yield return new WaitForSeconds(levelLoadDelay);
+
+        SceneManager.LoadScene(activeSceneIndex);
     }
 }
