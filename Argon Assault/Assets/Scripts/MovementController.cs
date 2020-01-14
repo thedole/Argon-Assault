@@ -129,7 +129,7 @@ public class MovementController : MonoBehaviour
         return new Vector3(pitchFromThrow, 0f, rollFromThrow);
     }
 
-    public void CollisionTriggered()
+    public void OnCollisionTriggered()
     {
         controlsDeactivated = true;
     }
