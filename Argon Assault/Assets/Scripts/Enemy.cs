@@ -1,11 +1,12 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
     GameObject explosion;
 
+    [SerializeField]
+    Transform spawnParent;
     bool isAlive = true;
 
     public void Start()
@@ -33,8 +34,7 @@ public class Enemy : MonoBehaviour
     {
         isAlive = false;
         explosion = Instantiate(explosion, transform.position, transform.rotation);
-        explosion.SetActive(true);
-
+        explosion.transform.parent = spawnParent;
         Destroy(gameObject);
     }
 }
