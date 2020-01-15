@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
@@ -6,7 +7,18 @@ public class Enemy : MonoBehaviour
     GameObject explosion;
 
     bool isAlive = true;
-    
+
+    public void Start()
+    {
+        AddNonTriggerBoxCollider();
+    }
+
+    private void AddNonTriggerBoxCollider()
+    {
+        var particleCollider = gameObject.AddComponent<BoxCollider>();
+        particleCollider.isTrigger = false;
+    }
+
     public void OnParticleCollision(GameObject other)
     {
         if (!isAlive)
