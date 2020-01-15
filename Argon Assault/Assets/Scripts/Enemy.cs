@@ -23,6 +23,6 @@ public class Enemy : MonoBehaviour
         explosion = Instantiate(explosion, transform.position, transform.rotation);
         explosion.SetActive(true);
 
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }
