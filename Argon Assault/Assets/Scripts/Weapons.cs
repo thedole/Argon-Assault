@@ -30,5 +30,11 @@ public class Weapons : MonoBehaviour
             lazerParticles.ForEach(lp => lp.Play());
             audioSource.PlayOneShot(lazerSound);
         }
+
+        var fire1up = CrossPlatformInputManager.GetButtonUp("Fire1");
+        if (fire1up && audioSource.IsPlaying)
+        {
+            audioSource.FadeOut();
+        }
     }
 }
