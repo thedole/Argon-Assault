@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 139837022937070840}
   - component: {fileID: 114788435666392104}
   - component: {fileID: 122996428015794704}
-  - component: {fileID: 8445373795393749885}
+  - component: {fileID: 1543705908}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -79,16 +79,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8445373795393749885
-BoxCollider:
+--- !u!114 &1543705908
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136932628143035892}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6604988, y: 0.12685722, z: 0.5375033}
-  m_Center: {x: 0, y: 0.000000007450581, z: 0.00000011920929}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e710eaebc6aeb442a1fc6fc8e90d1ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 3677050321881115564, guid: bbf721e274e913941b7cc1792e45e6a5,
+    type: 3}
+  spawnParent: {fileID: 0}
+  score: 10
+  scoreBoard: {fileID: 0}
