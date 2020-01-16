@@ -5,24 +5,23 @@ using UnityEngine.UI;
 public class ScoreBoard : MonoBehaviour
 {
     Text scoreBoard;
+    int score;
 
     public void Awake()
     {
         scoreBoard = FindObjectsOfType<Text>()
             .FirstOrDefault(go => go.name.Equals("scoreBoard"));
 
-        setScore(0);
+        setScoreText();
     }
 
     public void AddScore(int scoreIncrement)
     {
-        var currentScore = int.Parse(scoreBoard.text);
-        var newScore = currentScore + scoreIncrement;
-
-        setScore(newScore);
+        score += scoreIncrement;
+        setScoreText();
     }
 
-    private void setScore(int score)
+    private void setScoreText()
     {
         var textScore = string.Format("{0:D10}", score);
         scoreBoard.text = textScore;
