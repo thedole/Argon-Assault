@@ -2925,7 +2925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 210a97a287f421b478d72b832d7dcf70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lazerSound: {fileID: 8300000, guid: cb723bb6c438d4e4abab2d4e188b4aed, type: 3}
+  lazerSound: {fileID: 8300000, guid: e7c7c2c084c06c64ba72b5da62c6ec11, type: 3}
 --- !u!82 &2141619946
 AudioSource:
   m_ObjectHideFlags: 0
