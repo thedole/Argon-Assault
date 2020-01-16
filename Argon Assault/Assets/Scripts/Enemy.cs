@@ -7,11 +7,23 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     Transform spawnParent;
+
+    [Tooltip("The value for this enemy when killed")]
+    [SerializeField]
+    int score = 10;
+
+    [SerializeField]
+    GameObject scoreBoard;
+    ScoreBoard scoreBoardScript;
+
     bool isAlive = true;
+
+
 
     public void Start()
     {
         AddNonTriggerBoxCollider();
+        scoreBoardScript = scoreBoard.GetComponent<ScoreBoard>();
     }
 
     private void AddNonTriggerBoxCollider()
@@ -32,6 +44,7 @@ public class Enemy : MonoBehaviour
 
     private void explode()
     {
+        scoreBoardScript.AddScore(score);
         isAlive = false;
         explosion = Instantiate(explosion, transform.position, transform.rotation);
         explosion.transform.parent = spawnParent;
