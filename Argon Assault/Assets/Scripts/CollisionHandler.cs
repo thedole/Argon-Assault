@@ -21,7 +21,8 @@ public class CollisionHandler : MonoBehaviour
     {
         SendMessage("OnCollisionTriggered");
         var explosion = transform.Find("Explosion")?.gameObject;
-        explosion.SetActive(true);
+
+        explosion?.SetActive(true);
 
         StartCoroutine(RestartLevel());
     }
