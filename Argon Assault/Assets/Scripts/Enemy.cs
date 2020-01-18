@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class Enemy : MonoBehaviour
     [Tooltip("The value for this enemy when killed")]
     [SerializeField]
     int score = 10;
+
+    [Tooltip("The number of hits needed to kill this enemy")]
+    [SerializeField]
+    int hitsNeeded = 3;
 
     [SerializeField]
     GameObject scoreBoard;
@@ -39,7 +44,18 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        explode();
+        processHit();
+
+    }
+
+    private void processHit()
+    {
+        hitsNeeded--;
+
+        if (hitsNeeded <= 0)
+        {
+            explode();
+        }
     }
 
     private void explode()
