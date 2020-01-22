@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 2.06
+  m_AmbientIntensity: 8
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 7721422f86c67ec47b35d567bab3ac04, type: 2}
@@ -51,8 +51,8 @@ LightmapSettings:
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 0
+    m_EnableBakedLightmaps: 0
+    m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 12
     m_Resolution: 2
@@ -1275,22 +1275,22 @@ PrefabInstance:
     - target: {fileID: 4900778424545699782, guid: a3d8d0654f0e0604ebea66b4af7b4082,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.2623959
+      value: -0.7930104
       objectReference: {fileID: 0}
     - target: {fileID: 4900778424545699782, guid: a3d8d0654f0e0604ebea66b4af7b4082,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.36692443
+      value: -0.043668654
       objectReference: {fileID: 0}
     - target: {fileID: 4900778424545699782, guid: a3d8d0654f0e0604ebea66b4af7b4082,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.88583404
+      value: -0.000009850367
       objectReference: {fileID: 0}
     - target: {fileID: 4900778424545699782, guid: a3d8d0654f0e0604ebea66b4af7b4082,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.10868792
+      value: -0.60764104
       objectReference: {fileID: 0}
     - target: {fileID: 4900778424545699782, guid: a3d8d0654f0e0604ebea66b4af7b4082,
         type: 3}
@@ -1300,17 +1300,17 @@ PrefabInstance:
     - target: {fileID: 4900778424545699782, guid: a3d8d0654f0e0604ebea66b4af7b4082,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 135
+      value: 105.479004
       objectReference: {fileID: 0}
     - target: {fileID: 4900778424545699782, guid: a3d8d0654f0e0604ebea66b4af7b4082,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 213
+      value: 348.527
       objectReference: {fileID: 0}
     - target: {fileID: 4900778424545699782, guid: a3d8d0654f0e0604ebea66b4af7b4082,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -15.044006
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3d8d0654f0e0604ebea66b4af7b4082, type: 3}
